@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.blog_project.dao.CustomDao">
+    <update id="Update">
+        UPDATE  custom_table
+        <set>
+            <if test="title != null and title != ''">
+                title = #{title},
+            </if>
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+            <if test="src != null and src !='' ">
+                src = #{src},
+            </if>
+        </set>
+        where ID = #{ID};
+    </update>
+</mapper>
